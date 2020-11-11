@@ -331,24 +331,32 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         jTextFieldResult.setText(jTextFieldResult.getText()+"3");
     }//GEN-LAST:event_jButton3ActionPerformed
 
+    private String noDecimal(float resultado){
+        String devolver="";
+        devolver=Float.toString(resultado);
+        if(resultado%1==0){
+            devolver=devolver.substring(0,devolver.length()-2);
+        }
+        return devolver;
+    }
     private void jButtonIgualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonIgualActionPerformed
         // TODO add your handling code here:
         this.n2=Float.parseFloat(this.jTextFieldResult.getText());
         switch(op){
             case "+":
-                this.jTextFieldResult.setText(Float.toString(this.n1+this.n2));
+                this.jTextFieldResult.setText(noDecimal(this.n1+this.n2));
                 break;
                 
             case "-":
-                this.jTextFieldResult.setText(Float.toString(this.n1-this.n2));
+                this.jTextFieldResult.setText(noDecimal(this.n1-this.n2));
                 break;
             
             case"*":
-                this.jTextFieldResult.setText(Float.toString(this.n1*this.n2));
+                this.jTextFieldResult.setText(noDecimal(this.n1*this.n2));
                 break;
                 
             case"/":
-                this.jTextFieldResult.setText(Float.toString(this.n1/this.n2));
+                this.jTextFieldResult.setText(noDecimal(this.n1/this.n2));
                 break;
         }
     }//GEN-LAST:event_jButtonIgualActionPerformed
